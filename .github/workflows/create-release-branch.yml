@@ -28,4 +28,4 @@ jobs:
 
       - name: Push Release branch
         run: |
-          git -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/${{ inputs.RELEASE_BRANCH_NAME }}:refs/heads/${{ inputs.RELEASE_BRANCH_NAME }} --set-upstream
+          git -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/release_${{ inputs.RELEASE_BRANCH_NAME }}:refs/heads/release_${{ inputs.RELEASE_BRANCH_NAME }} --set-upstream
