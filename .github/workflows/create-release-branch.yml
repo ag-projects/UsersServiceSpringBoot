@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: QuickFee/${{ inputs.SOURCE_REPO }}
+          repository: https://github.com/ag-projects/UsersServiceSpringBoot/${{ inputs.SOURCE_REPO }}
           ref: main
 #          token: ${{ secrets.PAT }}
 
