@@ -1,4 +1,4 @@
-name: Z Re-usable create release branch
+name: Create release branch
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/ag-projects/UsersServiceSpringBoot/${{ inputs.SOURCE_REPO }}
+          repository: ag-projects/UsersServiceSpringBoot/${{ inputs.SOURCE_REPO }}
           ref: main
 #          token: ${{ secrets.PAT }}
 
