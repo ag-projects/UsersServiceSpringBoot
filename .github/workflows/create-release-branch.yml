@@ -1,7 +1,7 @@
 name: Z Re-usable create release branch
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       RELEASE_BRANCH_NAME:
         required: true
