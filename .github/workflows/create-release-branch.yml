@@ -4,8 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       RELEASE_BRANCH_NAME:
+        description: 'Release branch date YYYY-MM-DD'
         required: true
         type: string
+        default: YYYY-MM-DD
       SOURCE_REPO:
         required: true
         type: string
