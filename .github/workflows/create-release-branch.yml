@@ -24,7 +24,7 @@ jobs:
 
       - name: Checkout release branch
         run: |
-          git checkout -b ${{ inputs.RELEASE_BRANCH_NAME }} HEAD --
+          git checkout -b 'release_' +${{ inputs.RELEASE_BRANCH_NAME }} HEAD --
 
       - name: Push Release branch
         run: |
