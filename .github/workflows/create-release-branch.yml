@@ -20,7 +20,7 @@ jobs:
         with:
           repository: ag-projects/UsersServiceSpringBoot
           ref: main
-#          token: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT }}
 
       - name: Checkout release branch
         run: |
