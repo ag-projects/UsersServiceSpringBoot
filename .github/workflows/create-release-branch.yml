@@ -1,0 +1,34 @@
+name: Create Release Branch
+
+on:
+  workflow_call:
+    inputs:
+      CREATE_BRANCH:
+        required: true
+        type: string
+      SOURCE_REPO:
+        required: true
+        type: string
+
+jobs:
+  create-release-branch-and-update-deps:
+
+    name: Create release branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: QuickFee/${{ inputs.SOURCE_REPO }}
+          ref: development
+#          token: ${{ secrets.PAT }}
+
+      - name: Create release branch
+        run: |
+          git checkout -b ${{ inputs.CREATE_BRANCH }} HEAD --
+
+
+      - name: Push Release branch
+        run: |
+          git -c core.quotepath=false -c log.showSignature=false push --progress --porcelain origin refs/heads/${{ inputs.CREATE_BRANCH }}:refs/heads/${{ inputs.CREATE_BRANCH }} --set-upstream
